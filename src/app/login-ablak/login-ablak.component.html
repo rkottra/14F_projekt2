@@ -1,11 +1,13 @@
 <div>
+    {{19+21}}
     <form>
-        <label for="username">Username: </label>
+        <label for="username">{{labelUsername}}</label>
         <input name="username" id="username" type="text" />
         <br>
-        <label for="password">Password: </label>
+        <label for="password">{{labelPassword}}</label>
         <input name="password" id="password" type="password" />
         <br>
-        <input type="submit" value="Belépés" />
+        <input type="button" value="{{labelSubmit}}" (click)="kattint()"/>
+        <input type="reset" [value]="labelReset" />
     </form>
 </div>

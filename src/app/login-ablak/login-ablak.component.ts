@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginAblakComponent implements OnInit {
 
-  constructor() { }
+  public labelUsername:string = "Felhasználó név:";
+  public labelPassword:string = "Jelszó:";
+  public labelSubmit:string   = "Belépés";
+  public labelReset:string    = "Adatok törlése";
 
-  ngOnInit(): void {
+  constructor() { 
+   
   }
 
+  ngOnInit(): void {
+    this.labelUsername = "Username:";
+    this.labelPassword = "Password:";
+    this.labelSubmit   = "Login";
+    this.labelReset    = "Reset";
+  }
+
+  kattint() {
+    alert("Hahó");
+  }
 }
