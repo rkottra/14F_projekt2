@@ -12,6 +12,12 @@ export class LoginAblakComponent implements OnInit {
   public labelSubmit:string   = "Belépés";
   public labelReset:string    = "Adatok törlése";
 
+  public username:string      = "Kovács János";
+  public password:string      = "";
+
+  public loggedin: boolean    = false;
+  public error:string = "";
+
   constructor() { 
    
   }
@@ -23,7 +29,19 @@ export class LoginAblakComponent implements OnInit {
     this.labelReset    = "Reset";
   }
 
+  logout() {
+    this.loggedin = false;
+    this.error    = "";
+    this.password = "";
+  }
+
   kattint() {
-    alert("Hahó");
+    this.error = "";
+    this.loggedin = false;
+    if (this.username == "admin" && this.password=="123") {
+      this.loggedin = true;
+    } else {
+      this.error = "Hibás felhasználónév vagy jelszó.";
+    }
   }
 }

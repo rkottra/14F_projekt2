@@ -1,13 +1,24 @@
-<div>
-    {{19+21}}
-    <form>
-        <label for="username">{{labelUsername}}</label>
-        <input name="username" id="username" type="text" />
-        <br>
-        <label for="password">{{labelPassword}}</label>
-        <input name="password" id="password" type="password" />
-        <br>
-        <input type="button" value="{{labelSubmit}}" (click)="kattint()"/>
-        <input type="reset" [value]="labelReset" />
-    </form>
+<div class="login" *ngIf="!loggedin">
+    <label for="username">{{labelUsername}}</label>
+    <input name="username" id="username" type="text" 
+                [(ngModel)]="username" />
+    <br>
+    <label for="password">{{labelPassword}}</label>
+    <input name="password" id="password" type="password" 
+                [(ngModel)]="password"/>
+    <br>
+    <input type="button" value="{{labelSubmit}}" 
+                    (click)="kattint()"/>
+    
+    <input type="reset" [value]="labelReset" />
+</div>
+
+<div class="login" *ngIf="loggedin">
+    <label for="username">Üdvözöljük {{username}}!</label>
+    
+    <input type="button" value="Logout" (click)="logout()"/>
+</div>
+
+<div *ngIf="error != ''" class="error">
+    {{error}}
 </div>
