@@ -19,12 +19,7 @@ export class MenuComponent implements OnInit {
     {
       title: "Kapcsolat",
       link: "kapcsolat"
-    },
-    {
-      title: "Elérhetőségek",
-      link: "elerhetosegek"
-    },
-    
+    }
   ];
 
   constructor() { }
