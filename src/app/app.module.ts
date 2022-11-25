@@ -12,6 +12,7 @@ import { TermekekComponent } from './termekek/termekek.component';
 import { NyitooldalComponent } from './nyitooldal/nyitooldal.component';
 import { KapcsolatComponent } from './kapcsolat/kapcsolat.component';
 import { RouterModule } from '@angular/router';
+import { TermekComponent } from './termek/termek.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     TermekekComponent,
     NyitooldalComponent,
-    KapcsolatComponent
+    KapcsolatComponent,
+    TermekComponent
   ],
   imports: [
     BrowserModule,

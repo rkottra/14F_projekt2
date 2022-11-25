@@ -1,1 +1,13 @@
-<p>termekek works!</p>
+<br>
+<div style="clear: both;">
+    Keresés: <input type="text" />
+</div>
+<br>
+<div>
+    <app-termek *ngFor="let t of termekek"
+        [termek]="t">
+
+    </app-termek>
+</div>
+<br>
+<br>
