@@ -1,10 +1,18 @@
 <div id="content">
+  
   <app-fejlec></app-fejlec>
+
   <app-menu></app-menu>
 
-  <app-login-ablak></app-login-ablak>
+  <app-login-ablak 
+    (errorEsemény)="errorBekovetkezese($event)">
+  </app-login-ablak>
   
   <router-outlet></router-outlet>
 
   <app-lablec></app-lablec>
+
+  <div *ngIf="error != ''" class="error">
+    {{error}}
+  </div>
 </div>

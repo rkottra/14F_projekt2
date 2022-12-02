@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '2. projekt';
+  public title = '2. projekt';
+
+  public error:string = "";
+
+  public errorBekovetkezese(errorszoveg: string) {
+    this.error = errorszoveg;
+  }
 }

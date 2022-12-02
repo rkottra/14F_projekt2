@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login-ablak',
@@ -16,10 +16,11 @@ export class LoginAblakComponent implements OnInit {
   public password:string      = "";
 
   public loggedin: boolean    = false;
-  public error:string = "";
+
+  @Output() errorEsemény:EventEmitter<string> 
+                              = new EventEmitter();
 
   constructor() { 
-   
   }
 
   ngOnInit(): void {
@@ -31,17 +32,17 @@ export class LoginAblakComponent implements OnInit {
 
   logout() {
     this.loggedin = false;
-    this.error    = "";
+    this.errorEsemény.emit("");
     this.password = "";
   }
 
   kattint() {
-    this.error = "";
+    this.errorEsemény.emit("");
     this.loggedin = false;
     if (this.username == "admin" && this.password=="123") {
       this.loggedin = true;
     } else {
-      this.error = "Hibás felhasználónév vagy jelszó.";
+      this.errorEsemény.emit("Hibás felhasználónév vagy jelszó.");
     }
   }
 }
