@@ -17,8 +17,7 @@ export class LoginAblakComponent implements OnInit {
 
   public loggedin: boolean    = false;
 
-  @Output() errorEsemény:EventEmitter<string> 
-                              = new EventEmitter();
+  @Output() errorEsemény:EventEmitter<string> = new EventEmitter();
 
   constructor() { 
   }
@@ -41,7 +40,9 @@ export class LoginAblakComponent implements OnInit {
     this.loggedin = false;
     if (this.username == "admin" && this.password=="123") {
       this.loggedin = true;
+      this.password = "";
     } else {
+      this.password = "";
       this.errorEsemény.emit("Hibás felhasználónév vagy jelszó.");
     }
   }

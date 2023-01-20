@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TermekModel } from '../termek.model';
+import { TermekModel } from '../models/termek.model';
 
 @Component({
   selector: 'app-termekek',

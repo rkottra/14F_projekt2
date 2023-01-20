@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TermekModel } from '../termek.model';
+import { TermekModel } from '../models/termek.model';
+import { KosarService } from '../kosar.service';
 
 @Component({
   selector: 'app-termek',
@@ -8,12 +9,15 @@ import { TermekModel } from '../termek.model';
 })
 export class TermekComponent implements OnInit {
 
-  @Input() termek:TermekModel 
-            = new TermekModel();
+  @Input() termek:TermekModel = new TermekModel();
+  public db:number = 1;
 
-  constructor() { }
+  constructor(private kosarszervi:KosarService) { }
 
   ngOnInit(): void {
   }
 
+  kosarba() {
+    this.kosarszervi.kosarbaBetesz(this.termek, this.db);
+  }
 }
